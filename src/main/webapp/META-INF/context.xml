@@ -1,2 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context antiJARLocking="true" path="/permutasApp"/>
+<Context antiJARLocking="true" path="/permutasApp">	
+
+		<!-- Pool de conexiones -->
+		<Resource
+			 name="jdbc/accesoDB"
+			 auth="Container" 
+			 type="javax.sql.DataSource"
+			 maxActive="100" 
+			 maxIdle="30" 
+			 maxWait="10000" 
+			 defaultAutoCommit="false"
+			 url="jdbc:mysql://localhost:3306/permutas?autoReconnect=true"
+			 driverClassName="com.mysql.jdbc.Driver" 
+			 username="root" 
+			 password="root"
+			 validationQuery="SELECT 1 FROM dual" />
+</Context>
