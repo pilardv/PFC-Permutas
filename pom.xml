@@ -45,9 +45,37 @@
             <artifactId>spring-cloud-starter</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
-        </dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jdbc</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.jboss.spec.javax.transaction</groupId>
+					<artifactId>jboss-transaction-api_1.2_spec</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>javax.transaction-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.aspectj</groupId>
+					<artifactId>aspectjrt</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+		</dependency>        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-rest</artifactId>
@@ -73,37 +101,25 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <!-- For development environments we use H2 -->
-       <dependency>
+       <!-- >dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-        </dependency>
+        </dependency-->
         
-        <!-- Spring JDBC -->
-        <!-- <dependency>
-        	<groupId>org.springframework</groupId>
-        	<artifactId>spring-jdbc</artifactId>
-        	<version>${org.springframework.version}</version>        	
-        </dependency> -->
-        
-        <!-- Mybatis con Spring -->		
+               
+        <!-- Mybatis con Spring >		
         <dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.3</version>
-		</dependency>
+		</dependency-->
 		
-		<!-- Libreria de Mybatis -->
+		<!-- Libreria de Mybatis >
 		<dependency>
 			<groupId>org.mybatis</groupId>
 			<artifactId>mybatis</artifactId>
 			<version>3.2.2</version>
-		</dependency>
-		
-		<!-- JDBC Driver Mysql -->		
-	   	<dependency>
-	   		<groupId>mysql</groupId>
-	   		<artifactId>mysql-connector-java</artifactId>
-	   	</dependency>
+		</dependency-->
 	   	
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -121,15 +137,67 @@
             <version>1.0.0.RELEASE</version>
             <scope>test</scope>
         </dependency>       
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-web</artifactId>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Spring Data -->
+
+        
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-solr</artifactId>
             </dependency>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-tomcat</artifactId>
-                <scope>provided</scope>
-            </dependency>
+
+        <!-- Spring Security -->
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+          <!--   <version>3.2.0.RELEASE</version> -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+           <!--  <version>3.2.0.RELEASE</version> -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <!-- <version>3.2.0.RELEASE</version> -->
+        </dependency>
+
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+           <!--  <version>${hibernate.version}</version> -->
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+           <!--  <version>${hibernate-validator.version}</version> -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-c3p0</artifactId>
+            <version>${hibernate.version}</version>
+        </dependency>
+
+        <!-- MySQL Connector -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
         </dependencies>
 	
         <dependencyManagement>
@@ -157,7 +225,7 @@
                         </execution>
                     </executions>
                 </plugin>
-            </plugins>
+            </plugins>		
         </build>
 	
 

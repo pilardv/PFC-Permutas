@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Datos del usuario</title>
+</head>
+<body>
+	<h1>Datos</h1>
+
+
+	<table>
+
+			<tr th:each="persona : ${persona}">
+				<td th:text="${visita.nombre}">Nombre</td>
+				<td th:text="${visita.apellidos}">Apellidos</td>
+				<td th:text="${visita.email}">Email</td>
+			</tr>
+
+
+	</table>
+
+
+	<h1>Datos</h1>
+	
+  	<form action="#" th:action="@{/}" th:object="${persona}" method="post">
+    	<p>Nombre: <input type="text" th:field="*{nombre}" /></p>
+        <p>Apellidos: <input type="text" th:field="*{apellidos}" /></p>
+    	<p>Direccion: <input type="text" th:field="*{direccion}" /></p>
+        <p>Codigo Postal: <input type="text" th:field="*{codigoPostal}" /></p>             
+        <p>Email: <input type="text" th:field="*{email}" /></p>            
+        <p>Telefono: <input type="text" th:field="*{telefono}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+
+	<p>
+		Click <a th:href="@{/hello}">Ir</a> a Administración.
+	</p>
+</body>
+</html>
