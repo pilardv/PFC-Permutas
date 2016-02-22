@@ -20,14 +20,6 @@ public class Roles implements Serializable  {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected Roles(){}
-	
-	public Roles(String rol, String descripcion, List<Usuario> usuario){
-		this.rol = rol;
-		this.descripcion = descripcion;
-		this.usuario = usuario;
-	}
-	
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;	
@@ -40,6 +32,15 @@ public class Roles implements Serializable  {
 	@Valid
 	@ManyToMany(mappedBy = "rol", cascade = CascadeType.ALL)
 	private List<Usuario> usuario;
+	
+	public Roles(){}
+	
+	public Roles(Roles roles){
+		this.id = roles.id;
+		this.rol = roles.rol;
+		this.descripcion = roles.descripcion;
+		this.usuario = roles.usuario;
+	}
 	
 	public Integer getId() {
 		return id;

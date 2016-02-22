@@ -12,9 +12,9 @@
 	<table>
 
 			<tr th:each="persona : ${persona}">
-				<td th:text="${visita.nombre}">Nombre</td>
-				<td th:text="${visita.apellidos}">Apellidos</td>
-				<td th:text="${visita.email}">Email</td>
+				<td th:text="${persona.nombre}">Nombre</td>
+				<td th:text="${persona.apellidos}">Apellidos</td>
+				<td th:text="${persona.email}">Email</td>
 			</tr>
 
 

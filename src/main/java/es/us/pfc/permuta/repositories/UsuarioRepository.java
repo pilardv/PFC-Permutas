@@ -7,7 +7,7 @@ import es.us.pfc.permuta.entities.Usuario;
 
 public interface UsuarioRepository extends CrudRepository<Usuario, Integer> {
 	
-	@Query ("SELECT u FROM Usuario u WHERE u.nombreUsuario = ?")
+	@Query ("SELECT u FROM Usuario u WHERE u.nombreUsuario = ?1")
 	 public Usuario findByNombreUsuario (String nombreUsuario);
 
 }

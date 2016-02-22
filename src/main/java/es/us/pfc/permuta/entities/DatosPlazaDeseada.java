@@ -1,12 +1,10 @@
 package es.us.pfc.permuta.entities;
 
-import java.awt.Point;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.Valid;
 
@@ -15,24 +13,24 @@ import javax.validation.Valid;
 public class DatosPlazaDeseada {
 	
 	private static final long serialVersionUID = 1L;
-	
-	protected DatosPlazaDeseada(){}
-	
-	public DatosPlazaDeseada(Point localizacionPlazaDeseada, Provincia provincia){
-		this.localizacionPlazaDeseada = localizacionPlazaDeseada;
-		this.provincia = provincia;
-	}
 
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
-	private Point localizacionPlazaDeseada;
+	private String direccionPlazaDeseada;
 	
 	private Integer radio;
 	
+	public DatosPlazaDeseada(){}
+	
+	public DatosPlazaDeseada(String direccionPlazaDeseada, Provincia provincia){
+		this.direccionPlazaDeseada = direccionPlazaDeseada;
+		this.provincia = provincia;
+	}
+	
 	@Valid
-	@OneToOne(optional = false)	
+	@ManyToOne(optional = false)	
 	private Provincia provincia;
 
 	public static long getSerialversionuid() {
@@ -48,11 +46,11 @@ public class DatosPlazaDeseada {
 		this.id = id;
 	}
 	
-	public Point getLocalizacionPlazaDeseada() {
-		return localizacionPlazaDeseada;
+	public String getDireccionPlazaDeseada() {
+		return direccionPlazaDeseada;
 	}
-	public void setLocalizacionPlazaDeseada(Point localizacionPlazaDeseada) {
-		this.localizacionPlazaDeseada = localizacionPlazaDeseada;
+	public void setDireccionPlazaDeseada(String direccionPlazaDeseada) {
+		this.direccionPlazaDeseada = direccionPlazaDeseada;
 	}
 
 	// Relacion con la tabla Provincia

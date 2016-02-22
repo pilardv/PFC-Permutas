@@ -16,18 +16,18 @@ public class Provincia implements Serializable {
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected Provincia(){}
-	
-	public Provincia(String nombre){
-		this.nombre = nombre;
-	}
-	
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;
 	
 	@NotBlank
 	private String nombre;
+	
+	public Provincia(){}
+	
+	public Provincia(String nombre){
+		this.nombre = nombre;
+	}
 	
 	public Integer getId() {
 		return id;

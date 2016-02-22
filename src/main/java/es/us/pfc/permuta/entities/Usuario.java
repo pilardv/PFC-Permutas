@@ -22,14 +22,6 @@ public class Usuario implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
-	protected Usuario(){}
-	
-	public Usuario(String nombreUsuario, String clave, List<Roles> rol){
-		this.nombreUsuario = nombreUsuario;
-		this.clave = clave;
-		this.rol = rol;
-	}
-	
 	@Id 
     @GeneratedValue(strategy=GenerationType.AUTO)
 	private Integer id;	
@@ -46,6 +38,15 @@ public class Usuario implements Serializable{
 	@Valid
 	@ManyToMany(cascade = CascadeType.ALL)
 	private List<Roles> rol;
+	
+	public Usuario(){}
+	
+	public Usuario(Usuario usuario){
+		this.id = usuario.id;
+		this.nombreUsuario = usuario.nombreUsuario;
+		this.clave = usuario.clave;
+		this.rol = usuario.rol;
+	}
 	
 	public Integer getId() {
 		return id;

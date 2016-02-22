@@ -1,20 +1,40 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
-      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">  
+    
     <head>
-        <title>Spring Security Example </title>
-    </head>
+	   	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
+		<script>
+			function initialize() {
+			  var mapProp = {
+			    center:new google.maps.LatLng(37.3580015, -5.9873419),
+			    zoom:7,
+			    mapTypeId:google.maps.MapTypeId.SATELLITE
+			  };
+			  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
+  	</head>
+  
     <body>
         <div th:if="${param.error}">
-            Usuario y contraseña incorrectas.
+            Usuario y/o contraseña incorrectas.
         </div>
         <div th:if="${param.logout}">
             Sesión cerrada.
         </div>
         <form th:action="@{/login}" method="post">
-            <div><label> Usuario : <input type="text" name="username"/> </label></div>
-            <div><label> Contraseña: <input type="password" name="password"/> </label></div>
+            <div><label> Usuario : <input type="text" name="nombre_usuario"/> </label></div>
+            <div><label> Contraseña: <input type="password" name="clave"/> </label></div>
             <div><input type="submit" value="Iniciar sesión"/></div>
         </form>
+         
+        <div id="googleMap" style="width:500px;height:380px;"></div>       
+        <!-- <div id="map"></div>
+	    <script
+	        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1mrfNs9s77OT0Hepzl_5SDe-GtKViwTM&libraries=visualization&callback=initMap"  async defer>
+	    </script>
+	    <script src="../resources/js/map.js"> </script> -->
     </body>
 </html>
