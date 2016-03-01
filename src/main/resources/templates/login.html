@@ -30,6 +30,10 @@
             <div><input type="submit" value="Iniciar sesión"/></div>
         </form>
          
+        <form th:action="@{/logout}" method="post">
+           <input type="submit" value="Cerrar sesión"/>
+        </form>
+         
         <div id="googleMap" style="width:500px;height:380px;"></div>       
         <!-- <div id="map"></div>
 	    <script

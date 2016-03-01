@@ -36,7 +36,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         	.formLogin().loginPage("/login")
             .usernameParameter("nombre_usuario").passwordParameter("clave")
         .and()
-        	.logout().logoutSuccessUrl("/home")          
+        	.logout().logoutSuccessUrl("/login")          
             .permitAll();
     }
 
