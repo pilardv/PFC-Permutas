@@ -25,13 +25,9 @@
             Sesión cerrada.
         </div>
         <form th:action="@{/login}" method="post">
-            <div><label> Usuario : <input type="text" name="nombre_usuario"/> </label></div>
-            <div><label> Contraseña: <input type="password" name="clave"/> </label></div>
-            <div><input type="submit" value="Iniciar sesión"/></div>
-        </form>
-         
-        <form th:action="@{/logout}" method="post">
-           <input type="submit" value="Cerrar sesión"/>
+            <div><label> Usuario : <input type="text" name="nombre_usuario"/> </label></div><br/>
+            <div><label> Contraseña: <input type="password" name="clave"/> </label></div><br/>
+            <div><input type="submit" value="Iniciar sesión"/></div><br/>
         </form>
          
         <div id="googleMap" style="width:500px;height:380px;"></div>       
