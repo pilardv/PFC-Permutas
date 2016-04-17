@@ -7,6 +7,7 @@
 	<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1mrfNs9s77OT0Hepzl_5SDe-GtKViwTM&callback=initMap"></script> -->
 	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js"></script>
 	<script>
+	    //@ sourceURL=renderMap.js 
 		function initMap() {
 		    var geocoder = new google.maps.Geocoder();
 		    var latlng = new google.maps.LatLng(37.3580015, -5.9873419);
@@ -17,7 +18,7 @@
 		    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
 		    
 		    var direccionPlazaActual = document.getElementById("direccionPlazaActual").value;
-		    geocoder.geocode( { 'direccionPlazaActual': direccionPlazaActual}, function(results, status) {
+		    geocoder.geocode( { 'address': direccionPlazaActual}, function(results, status) {
 		      if (status == google.maps.GeocoderStatus.OK) {
 		        map.setCenter(results[0].geometry.location);
 		        var marker = new google.maps.Marker({
@@ -44,8 +45,16 @@
 				<td th:text="${user.nombre}">Nombre</td>
 				<td th:text="${user.apellidos}">Apellidos</td>
 				<td th:text="${user.email}">Email</td>
-				<td th:text="${user.direccionPlazaActual}" id="direccionPlazaActual">Dirección de plaza actual</td>
-				<!-- <td th:text="${user.plazaDeseada}">Dirección de plaza deseada</td> -->
+				<td>Dirección de plaza actual:<input th:value="${user.direccionPlazaActual}" id="direccionPlazaActual"></input></td>
+				<td>
+					<table> 
+						<tr><th>Alternativas deseadas:</th></tr>
+						<tr th:each="plaza : ${user.datosPlazaDeseada}">
+							<td th:text="${plaza.direccionPlazaDeseada}"></td>
+						</tr>	
+					</table>
+				</td>
+				<!-- <td th:text="${user.plazaDeseada[0]}">Dirección de plaza deseada</td> -->
 			</tr>
 
 
