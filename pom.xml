@@ -166,25 +166,21 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
-           <!--  <version>3.2.0.RELEASE</version> -->
         </dependency>
 
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
-            <!-- <version>3.2.0.RELEASE</version> -->
         </dependency>
 
         <!-- Hibernate -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-entitymanager</artifactId>
-           <!--  <version>${hibernate.version}</version> -->
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-           <!--  <version>${hibernate-validator.version}</version> -->
         </dependency>
 
         <dependency>
@@ -192,6 +188,16 @@
             <artifactId>hibernate-c3p0</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+        
+        <!-- Bootstrap -->
+        <dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>jquery</artifactId>
+		</dependency>
 
         <!-- MySQL Connector -->
         <dependency>
