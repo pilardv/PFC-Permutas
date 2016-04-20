@@ -1,1 +1,29 @@
+/* login.html */
 .modal-footer {   border-top: 0px; }
+
+/* home.html */
+#main, #main>.row {
+	height:100%;
+}
+
+#main>.row {
+    overflow-y:scroll;
+}
+
+.right {
+	height:100%;
+	width: 54%;
+	float: right; 
+}
+.map-canvas {
+	width:45%;
+    height:calc(100% - 0);
+    position:absolute;
+    top:0;
+    bottom:0;
+    overflow:hidden;
+}
+
+.plazasDeseadas{
+	margin-bottom: 117px;
+}
