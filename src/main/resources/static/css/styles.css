@@ -27,3 +27,39 @@
 .plazasDeseadas{
 	margin-bottom: 117px;
 }
+
+/* registro.html */
+.form-registro{
+	width:40%;
+}
+
+.nombre-formulario{
+	text-align: center;
+    font-size: xx-large;
+    margin: 15px 0px;
+    color: #ccc;
+}
+
+.form-col1{	
+    width: 49%;
+    float: left;
+}
+
+.form-col2{	
+    width: 49%;
+    float: right;
+}
+
+.form-col3{
+	width: 33%;
+	float: left;
+}
+
+.form-col4{
+	width: 33%;
+}
+
+.form-col5{
+	width: 33%;
+	float:right;
+}

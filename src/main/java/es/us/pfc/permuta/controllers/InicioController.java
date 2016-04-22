@@ -21,7 +21,6 @@ public class InicioController {
 
 	@Autowired
 	private PersonaRepository personaRepository;
-	private DatosPlazaDeseadaRepository datosPlazaDeseadaRepository;
 	
 	@RequestMapping(value="/", method=RequestMethod.GET)
 	@Transactional(readOnly=true)
@@ -33,11 +32,8 @@ public class InicioController {
 		}else{
 			Persona persona = personaRepository.findByUsuarioId(usuarioId);
 			
-//			List<DatosPlazaDeseada> plazasDeseadas = datosPlazaDeseadaRepository.findPlazasDeseadasByUsuarioId(usuarioId);
-			
 			ModelAndView mav = new ModelAndView("home");
 			mav.addObject("persona",persona);
-//			mav.addObject("nuevaPersona", new Persona());
 			return mav;
 		} 
 	}
@@ -47,5 +43,12 @@ public class InicioController {
         return "welcome";
         
     }
- 
+    
+    @RequestMapping(value="/registro", method = {RequestMethod.POST, RequestMethod.GET})
+	@Transactional(readOnly=true)
+	public ModelAndView insert(){		
+					
+    	ModelAndView mav = new ModelAndView("registro");
+		return mav;
+	}
 }

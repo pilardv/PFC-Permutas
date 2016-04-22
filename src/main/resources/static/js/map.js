@@ -46,7 +46,7 @@ function initMap() {
       	        
       	        var plazaDeseada = new google.maps.Marker({
 //      	        	icon: {
-//      	        	  fillColor: '#00f'
+//      	        	  fillColor: '#00FF00'
 //      	        	},
       	            position: results[0].geometry.location,
       	            title: 'Plaza deseada',
@@ -57,8 +57,8 @@ function initMap() {
       	        
       	      } else {
       	        alert("Geocode was not successful for the following reason: " + status);
-      		      }
-      		  });
+      		    }
+      		});
     	}
     	
     }

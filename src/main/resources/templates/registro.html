@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+		<title>Formulario de registro</title>
+		<link href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet" media="screen"/>
+		<link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" media="screen"/>
+	</head>
+	<body>
+		<div class="nombre-formulario">Formulario de Registro</div>
+		<form action="#" th:action="@{/registro}" th:object="${persona}" method="post" class="form center-block form-registro">
+			<div class="form-group">
+				<input type="text" name="nombreUsuario" class="form-control input-lg" placeholder="Nombre de usuario"/>
+			</div>
+			<div class="form-group">
+				<input type="text" name="password" class="form-control input-lg" placeholder="Contraseña"/>
+			</div>
+			<div class="form-group">
+				<input type="text" name="nombre" class="form-control input-lg" placeholder="Nombre"/>
+			</div>
+			<div class="form-group">
+				<input type="text" name="apellidos" class="form-control input-lg" placeholder="Apellidos"/>
+			</div>			
+			<div class="form-group">
+				<input type="text" name="direccion" class="form-control input-lg" placeholder="Direccion"/>
+			</div>
+			<div class="form-group">
+				<input type="text" name="telefono" class="form-control input-lg form-col1" placeholder="Teléfono"/>
+				<input type="text" name="email" class="form-control input-lg form-col2" placeholder="Email"/>
+			</div>
+			<div class="form-group">
+				<input type="text" name="cp" class="form-control input-lg form-col1" placeholder="C.P."/>
+				<select id="provincia" class="form-control input-lg form-col2" >
+					<option value="" selected="selected">Provincia</option>
+				</select>
+			</div>
+			<div class="form-group">
+				<input type="text" name="dir_Plaza_actual" class="form-control input-lg" placeholder="Dirección de su plaza actual"/>
+			</div>
+			<div class="form-group">
+				<input type="text" name="dir_Plazas_deseadas" class="form-control input-lg" placeholder="Direcciones de su plazas deseadas"/>
+			</div>
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary btn-lg btn-block input-lg form-col3">Enviar</button>
+				<button type="reset" class="btn btn-primary btn-lg btn-block form-col4">Limpiar</button>
+				<input type="button" class="btn btn-primary btn-lg btn-block form-col5" onClick="javascript:window.location('login.html')" value="Volver"/>
+			</div>
+			
+			
+	    	<!-- <p>Nombre: <input type="text" th:field="*{nombre}" /></p>
+	        <p>Apellidos: <input type="text" th:field="*{apellidos}" /></p>
+	    	<p>Direccion: <input type="text" th:field="*{direccion}" /></p>
+	        <p>Codigo Postal: <input type="text" th:field="*{codigoPostal}" /></p>             
+	        <p>Email: <input type="text" th:field="*{email}" /></p>            
+	        <p>Telefono: <input type="text" th:field="*{telefono}" /></p>
+	        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p> -->
+	    </form>
+	</body>
+</html>
