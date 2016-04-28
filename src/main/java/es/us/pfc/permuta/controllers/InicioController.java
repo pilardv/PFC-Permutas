@@ -1,7 +1,5 @@
 package es.us.pfc.permuta.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
@@ -10,9 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import es.us.pfc.permuta.entities.DatosPlazaDeseada;
 import es.us.pfc.permuta.entities.Persona;
-import es.us.pfc.permuta.repositories.DatosPlazaDeseadaRepository;
 import es.us.pfc.permuta.repositories.PersonaRepository;
 import es.us.pfc.permuta.security.LoginService;
 
@@ -43,12 +39,4 @@ public class InicioController {
         return "welcome";
         
     }
-    
-    @RequestMapping(value="/registro", method = {RequestMethod.POST, RequestMethod.GET})
-	@Transactional(readOnly=true)
-	public ModelAndView insert(){		
-					
-    	ModelAndView mav = new ModelAndView("registro");
-		return mav;
-	}
 }
